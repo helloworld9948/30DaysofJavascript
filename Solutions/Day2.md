@@ -71,17 +71,71 @@ console.log(challenge.charAt(15));
 
 ```
 14. What is the character code of J in '30 Days Of JavaScript' string using __charCodeAt()__
+
+```js
+console.log(challenge.charCodeAt(J));
+
+```
 15. Use __indexOf__ to determine the position of the first occurrence of __a__ in 30 Days Of JavaScript
+```js
+
+console.log(challenge.indexOf("a"));
+```
+
 16. Use __lastIndexOf__ to determine the position of the last occurrence of __a__ in 30 Days Of JavaScript.
+```js
+console.log(challenge.lastIndexOf("a"));
+```
 17. Use __indexOf__ to find the position of the first occurrence of the word __because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+
+```js
+let sentence = "You cannot end a sentence with because because because is a conjunction"
+console.log(sentence.indexOf("because"))
+```
 18. Use __lastIndexOf__ to find the position of the last occurrence of the word __because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+
+```js
+console.log(sentence.lastIndexOf("because"));
+```
 19. Use __search__ to find the position of the first occurrence of the word __because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+```js
+console.log(sentence.search("because"));
+
+```
 20. Use __trim()__ to remove any trailing whitespace at the beginning and the end of a string.E.g ' 30 Days Of JavaScript '.
+
+```js
+let string= " 30 Days Of JavaScript "
+
+console.log(challenge.trim());
+```
 21. Use __startsWith()__ method with the string *30 Days Of JavaScript* and make the result true
+
+```js
+console.log(challenge.startsWith("3"))
+```
 22. Use __endsWith()__ method with the string *30 Days Of JavaScript* and make the result true
+```js
+console.log(challenge.endsWith("p"))
+```
+
 23. Use __match()__ method to find all the __a__’s in 30 Days Of JavaScript
+```js
+console.log(challenge.match(a/g))
+console.log(challenge.match(A/g))
+
+```
+
 24. Use __concat()__ and merge '30 Days of' and 'JavaScript' to a single string, '30 Days Of JavaScript'
+```js
+let str1 = "30 Days of"
+console.log(str1.concat(" JavaScript"))
+```
 25. Use __repeat()__ method to print 30 Days Of JavaScript 2 times
+
+```js
+console.log(challenge.repeat(2))
+```
 
 ### Exercise: Level 2
 
@@ -120,11 +174,53 @@ console.log(challenge.charAt(15));
 ### Exercises: Level 3
 
 1. 'Love is the best thing in this world. Some found their love and some are still looking for their love.' Count the number of word __love__ in this sentence.
+```js
+const str= "Love is the best thing in this world. Some found their love and some are still looking for their love."
+let matches = str.match(/Love/gi)
+let count = matches ? matches.length : 0 ;
+console.log(count); 
+```
+
 2. Use __match()__ to count the number of all __because__ in the following sentence:__'You cannot end a sentence with because because because is a conjunction'__
+
+```js
+const str= "You cannot end a sentence with because because because is a conjunction"
+let matches = str.match(/because/gi)
+let count = matches ? matches.length : 0 ;
+console.log(count); 
+
+```
 3. Clean the following text and find the most frequent word (hint, use replace and regular expressions).
 
     ```js
         const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
     ```
+```js
 
+ const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
+let count = {};
+let cleansen = sentence.replace(/[^a-zA-Z\s]/g, "").toLowerCase(); 
+let cleanarray = cleansen.split(/\s+/);
+ cleanarray.forEach(word => {
+    if (word) {
+        count[word] = (count[word] || 0) + 1
+    }
+    
+ });
+
+ let frequentword = '';
+ let max= 0;
+  for(word in count){
+    if (count[word] > max){
+        max = count[word];
+        frequentword = word
+    }
+  }
+console.log("Frequent word is : "+ frequentword + " count = " + max );
+ ```
 4. Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+```js
+let text ="He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month."
+let numbers = text.match(/\d+/g);
+console.log("Total annual income is = " + (((Number(numbers[0]) + Number(numbers[2]) )* 12) + Number(numbers[1]) ));
+```
