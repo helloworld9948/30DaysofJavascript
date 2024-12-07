@@ -111,4 +111,4 @@ const webTechs = [
 1.Slice the first ten countries from the [countries array](https://github.com/Asabeneh/30DaysOfJavaScript/tree/master/data/countries.js)
 1. Find the middle country(ies) in the [countries array](https://github.com/Asabeneh/30DaysOfJavaScript/tree/master/data/countries.js)
 2. Divide the countries array into two equal arrays if it is even.  If countries array is not even , one more country for the first half.
-  
+   
