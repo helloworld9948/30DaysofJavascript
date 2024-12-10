@@ -108,7 +108,50 @@ const webTechs = [
     - Find the average age(all items divided by number of items)
     - Find the range of the ages(max minus min)
     - Compare the value of (min - average) and (max - average), use _abs()_ method
+    ```js
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+    ages.sort()
+    console.log(ages)
+    console.log(ages[0])
+    console.log(ages[ages.length - 1])
+    console.log(ages[ages.length / 2])
+    let sum = 0
+    for (let i = 0; i < ages.length; i++) {
+        sum += ages[i]
+    }
+    const average =Math.round(sum / ages.length)
+    console.log(average)
+    const range = ages[ages.length - 1] - ages[0]
+    console.log(range)
+    console.log(Math.abs(ages[0] - average) , Math.abs(ages[ages.length - 1] - average));   
+    ```
 1.Slice the first ten countries from the [countries array](https://github.com/Asabeneh/30DaysOfJavaScript/tree/master/data/countries.js)
+
+```js
+console.log(countries.slice(0, 10));
+
+```
 1. Find the middle country(ies) in the [countries array](https://github.com/Asabeneh/30DaysOfJavaScript/tree/master/data/countries.js)
+```js
+console.log(countries[(countries.length - 1 )/2]);
+```
 2. Divide the countries array into two equal arrays if it is even.  If countries array is not even , one more country for the first half.
+
+```js
+if (countries.length % 2 === 0) {
+    //what if they are even
+efirsthalf = countries.slice(0, countries.length / 2)
+esecondhalf = countries.slice(countries.length / 2)
+console.log(efirsthalf)
+console.log(esecondhalf)
+}
+else {
+    ofirsthalf = countries.slice(0, (countries.length + 1) / 2)
+osecondhalf = countries.slice((countries.length + 1) / 2)
+console.log(ofirsthalf)
+console.log(osecondhalf)
+    
+}
+
+```
   
