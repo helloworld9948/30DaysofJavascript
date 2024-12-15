@@ -273,10 +273,80 @@ function arrayOfHexaColors(count){
 }
 ```
 1. Call your function _shuffleArray_, it takes an array as a parameter and it returns a shuffled array
+```js
+const prompt = require("prompt-sync")();
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const ShuffleArray = function (arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+ 
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+
+console.log(ShuffleArray(arr));
+```
+
+
 1. Call your function _factorial_, it takes a whole number as a parameter and it return a factorial of the number
+
+```js
+const prompt = require("prompt-sync")();
+let n = parseInt(prompt("Enter a number: ")); 
+function factorial(n) {
+  if (n == 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+console.log(factorial(n));
+
+```
+
 1. Call your function _isEmpty_, it takes a parameter and it checks if it is empty or not
+
+```js
+const prompt = require("prompt-sync")();
+
+let Array = [1,2,3,4,5,6,7,8,9,10];
+
+let isEmpty = (Array) => {
+  if (Array.length === 0) {
+    return  true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(isEmpty(Array));
+```
+
 1. Call your function _sum_, it takes any number of arguments and it returns the sum.
 1. Write a function called _sumOfArrayItems_, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+```js
+const prompt = require("prompt-sync")();
+
+let Array = [1,2,3,4,5,6,7,8,9,10];
+let sum= 0;
+let sumofArray = (Array) => {
+  for (let index = 0; index < Array.length; index++) {
+    if (typeof Array[index] !== 'number') {
+      return `Error: Item at index ${index} is not a number.`;
+    }
+    else{
+     sum += Array[index];
+    }  
+  }return sum;
+}
+console.log(sumofArray(Array));
+
+```
+
+
 1. Write a function called _average_, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
 1. Write a function called _modifyArray_ takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
 
